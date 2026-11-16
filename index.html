@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tasks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- Sidebar Collapse -->
+  <aside class="side" id="side">
+    <div class="top">
+      <span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4L18 8"/></svg></span>
+      <span class="lb brand">Tasks</span>
+      <button class="collapse" id="collapse" aria-label="サイドバーを閉じる" aria-expanded="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5 9 12l5.5 5.5"/></svg></button>
+    </div>
+    <nav class="nav" id="nav">
+      <span class="hl" id="hl"></span>
+      <button class="it" data-list="inbox" title="インボックス"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13.5 6.2 6a1.5 1.5 0 0 1 1.4-1h8.8a1.5 1.5 0 0 1 1.4 1l2.2 7.5V18a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18z"/><path d="M4 13.5h4.5l1 2h5l1-2H20"/></svg><span class="lb">インボックス</span><span class="lb n"></span></button>
+      <button class="it" data-list="work" title="仕事"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="7" width="17" height="12.5" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3.5 12.5h17"/></svg><span class="lb">仕事</span><span class="lb n"></span></button>
+      <button class="it" data-list="home" title="プライベート"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1z"/></svg><span class="lb">プライベート</span><span class="lb n"></span></button>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <div class="col">
+      <header class="head">
+        <h1 id="title">インボックス</h1>
+        <span class="roll" title="残り"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/></svg><span class="digits" id="count" aria-live="polite"></span></span>
+      </header>
+
+      <!-- Springy Input -->
+      <form class="field" id="field" autocomplete="off">
+        <label class="flabel" id="flabel" for="q">タスクを追加</label>
+        <div class="box">
+          <div class="layer"><div class="layer-in" id="layer"></div></div>
+          <input class="qinput" id="q" type="text" spellcheck="false" maxlength="80">
+          <span class="caret" id="caret"></span>
+        </div>
+        <button class="go idle" id="go" type="submit" aria-label="追加"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+      </form>
+
+      <!-- Tab Pill -->
+      <nav class="tabs" id="tabs" role="tablist" aria-label="フィルター">
+        <span class="pill" id="pill"></span>
+        <button role="tab" data-filter="active">未完了</button>
+        <button role="tab" data-filter="done">完了</button>
+        <button role="tab" data-filter="all">すべて</button>
+      </nav>
+
+      <!-- Checkbox List -->
+      <ul class="list" id="list"></ul>
+      <div class="empty" id="empty" aria-label="タスクなし"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16.5 9.5"/></svg></div>
+    </div>
+  </main>
+</div>
+
+<script src="js/motion.js"></script>
+<script src="js/store.js"></script>
+<script src="js/components/sidebar.js"></script>
+<script src="js/components/quick-add.js"></script>
+<script src="js/components/tab-pill.js"></script>
+<script src="js/components/task-list.js"></script>
+<script src="js/components/roll-number.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

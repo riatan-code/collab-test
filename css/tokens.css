@@ -1,0 +1,67 @@
+/* Design tokens — based on DesignBookmark Motion Studies (https://designbookmark.com/motion)
+   色・文字・角丸・モーションはここが唯一の定義元。コンポーネント側で直接値を書かないこと。 */
+:root{
+  /* color (dark) */
+  --stage:#000;
+  --card:#171717;
+  --surface:#262626;
+  --fill-1:rgba(255,255,255,.05);
+  --fill-2:rgba(255,255,255,.09);
+  --fill-3:rgba(255,255,255,.14);
+  --line:rgba(255,255,255,.12);
+  --text:#fff;
+  --text-2:rgba(255,255,255,.78);
+  --muted:#9a9a9a;
+  --muted-2:#828282;
+  --green:#34d17a;
+  --orange:#ff9f0a;
+  --red:#ff5a5f;
+  --blue:#3ec9ff;
+  --purple:#c69bff;
+  --on-green:#04140a;
+  --inverse:#fff;
+  --on-inverse:#000;
+  color-scheme:dark;
+
+  /* type */
+  --font:Inter,"Noto Sans JP","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --fs-xs:12px;
+  --fs-sm:13px;
+  --fs-md:14px;
+  --fs-base:15px;
+  --fs-lg:16px;
+  --fs-2xl:28px;
+  --fw-regular:400;
+  --fw-medium:500;
+  --fw-bold:600;
+
+  /* radius */
+  --r-card:28px;
+  --r-tile:14px;
+  --r-row:12px;
+  --r-sheet:24px;
+  --r-pill:999px;
+
+  /* motion: "stiffness damping" */
+  --spring-settle:280 22;
+  --spring-soft:260 24;
+  --spring-pop:520 16;
+  --input-caret:700 32;
+}
+
+:root[data-theme="light"]{
+  --stage:#fff;
+  --card:#f7f7f6;
+  --surface:#fff;
+  --fill-1:rgba(23,24,26,.04);
+  --fill-2:rgba(23,24,26,.07);
+  --fill-3:rgba(23,24,26,.12);
+  --line:rgba(23,24,26,.16);
+  --text:#17181a;
+  --text-2:#3c3b37;
+  --muted:#6f6e68;
+  --muted-2:#85847e;
+  --inverse:#0e0f11;
+  --on-inverse:#f4f3f1;
+  color-scheme:light;
+}
